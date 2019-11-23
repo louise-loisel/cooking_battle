@@ -54,8 +54,8 @@ class CreatesController < ApplicationController
       Colleague.where(name: params[:Cookies]).update_all(selectioned: true, details: params[:pepites])
       @pepites = params[:pepites]
     end
-    if Cake.where(name: "Cornes de gazelle", selectioned: true)
-      Colleague.where(pastry: "Cornes de gazelle").update_all(selectioned: true)
+    if params[:"Cornes de gazelle"]
+      Colleague.where(name: params[:"Cornes de gazelle"]).update_all(selectioned: true)
     end
     if params[:Churros]
       Colleague.where(name: params[:Churros]).update_all(selectioned: true)
@@ -66,12 +66,14 @@ class CreatesController < ApplicationController
     if params[:fruits]
       Colleague.where(name: params[:fruits]).update_all(selectioned: true)
     end
-  # Colleague.where.not(name: params[:cake]).update_all(selectioned: false)
     redirect_to "/result"
+
   end
 
   def result
     @selected_cakes = Cake.where(selectioned: true)
     @selected_colleagues = Colleague.where(selectioned: true)
   end
+
+
 end

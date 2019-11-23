@@ -1,9 +1,5 @@
 <h1>Bienvenue Chief of Happiness !</h1>
-<p>Sélectionné(s) :</p>
-<% @selected_cakes.each do |cake|%>
-  <%= cake.name %>
-  </br>
-<% end %>
+
 
 
 <h1>Pâtisseries disponibles :</h1>
@@ -14,19 +10,19 @@
     </br>
     <% if pastry.name == "Fruits" %>
       <% @colleagues_no_option.where(pastry: "Fruits").each do |c|%>
-          <%= check_box_tag "fruits[]", c.name %>
+          <%= check_box_tag "fruits[]", c.name%>
           <%= c.name %>
           </br>
       <% end %>
       <%elsif pastry.name == "Cookies" %>
     <% @colleagues_no_option.where(pastry: "Cookies").each do |c|%>
-        <%= radio_button_tag pastry.name, c.name %>
+        <%= radio_button_tag pastry.name, c.name, checked = true %>
         <%= c.name %>
         </br>
 
         <% end %>
         Pépites chocolat</br>
-        <%= radio_button_tag "pepites", "blanc" %>
+        <%= radio_button_tag "pepites", "blanc", checked = true %>
   Chocolat blanc
   <%= radio_button_tag "pepites", "noir" %>
   Chocolat noir
@@ -34,7 +30,7 @@
   </br>
     <% else %>
         <% @colleagues_no_option.where(pastry: pastry.name).each do |c|%>
-          <%= radio_button_tag pastry.name, c.name %>
+          <%= radio_button_tag pastry.name, c.name, checked = true %>
           <%= c.name %>
           </br>
         <% end %>
@@ -45,8 +41,9 @@
   <input type="submit" value="Sauvegarde battle" />
 <% end %>
 
-
-
-
-<p><a href="/">Retourner à l’accueil</a></p> </br>
+</br>
+<p><a href="/">Retourner à l’accueil</a></p>
 <p><a href="/linguini">Retourner à la décision Linguini</a></p>
+<p><a href="/reinit">Réinitialiser la battle</a></p>
+<p><a href="/colleagues">Base de données des collègues</a></p>
+<p><a href="/patisseries">Base de données des pâtisseries</a></p>

@@ -1,5 +1,5 @@
 <h1>Résultats !</h1>
-<p>Sélectionné(s) :</p>
+<p>Sélectionné.e.s :</p>
 <% @selected_colleagues.each do |colleague|%>
   <%= colleague.pastry %></br>
   <% if colleague.details != nil %>
@@ -12,3 +12,6 @@
   </br></br>
 <% end %>
   </br>
+  <p><a href="/">Retourner à l’accueil</a></p>
+
+  <p><a href="/reinit">Réinitialiser la battle</a></p>

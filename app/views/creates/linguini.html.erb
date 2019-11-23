@@ -10,14 +10,15 @@
 
   <%= form_tag "/linguini/selection", method: "patch" do %>
     <% @unselected_cakes.each do |cake|%>
-      <%= cake.name %>
-
       <%= check_box_tag "lchosen_cakes[]", cake.name %>
+      <%= cake.name %></br>
     <% end %>
+    </br>
     <input type="submit" value="Sauvegarde battle" />
     <% end %>
-
-
-<p><a href="/">Retourner à l’accueil</a></p>
 </br>
+<p><a href="/coh">Interface du chief of happiness</a></p>
+
+
 <p><a href="/reinit">Réinitialiser la battle</a></p>
+<p><a href="/">Retourner à l’accueil</a></p>
