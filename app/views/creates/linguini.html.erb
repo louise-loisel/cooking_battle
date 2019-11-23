@@ -1,0 +1,23 @@
+<h1>Bienvenue Linguini !</h1>
+<p>Sélectionné(s) :</p>
+<% @selected_cakes.each do |cake|%>
+  <%= cake.name %>
+<% end %>
+  </br>
+
+<h1>Pâtisseries disponibles :</h1>
+
+
+  <%= form_tag "/linguini/selection", method: "patch" do %>
+    <% @unselected_cakes.each do |cake|%>
+      <%= cake.name %>
+
+      <%= check_box_tag "lchosen_cakes[]", cake.name %>
+    <% end %>
+    <input type="submit" value="Sauvegarde battle" />
+    <% end %>
+
+
+<p><a href="/">Retourner à l’accueil</a></p>
+</br>
+<p><a href="/reinit">Réinitialiser la battle</a></p>

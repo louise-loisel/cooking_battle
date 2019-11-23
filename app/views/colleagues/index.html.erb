@@ -8,7 +8,8 @@
       <th>Name</th>
       <th>Pastry</th>
       <th>Selectioned</th>
-      <th colspan="3"></th>
+      <th>Cake id</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -18,6 +19,7 @@
         <td><%= colleague.name %></td>
         <td><%= colleague.pastry %></td>
         <td><%= colleague.selectioned %></td>
+        <td><%= colleague.cake_id %></td>
         <td><%= link_to 'Show', colleague %></td>
         <td><%= link_to 'Edit', edit_colleague_path(colleague) %></td>
         <td><%= link_to 'Destroy', colleague, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,14 @@
+<h1>Résultats !</h1>
+<p>Sélectionné(s) :</p>
+<% @selected_colleagues.each do |colleague|%>
+  <%= colleague.pastry %></br>
+  <% if colleague.details != nil %>
+  Chocolat <%= colleague.details %>
+  </br>
+  <% end %>
+
+  <%= colleague.name %>
+
+  </br></br>
+<% end %>
+  </br>

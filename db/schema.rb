@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_21_220002) do
+ActiveRecord::Schema.define(version: 2019_11_23_133406) do
+
+  create_table "cakes", force: :cascade do |t|
+    t.string "name"
+    t.boolean "selectioned"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "details"
+  end
 
   create_table "colleagues", force: :cascade do |t|
     t.string "name"
@@ -18,6 +26,8 @@ ActiveRecord::Schema.define(version: 2019_11_21_220002) do
     t.boolean "selectioned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "cake_id"
+    t.string "details"
   end
 
 end

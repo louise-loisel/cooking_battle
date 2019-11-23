@@ -1,0 +1,52 @@
+<h1>Bienvenue Chief of Happiness !</h1>
+<p>Sélectionné(s) :</p>
+<% @selected_cakes.each do |cake|%>
+  <%= cake.name %>
+  </br>
+<% end %>
+
+
+<h1>Pâtisseries disponibles :</h1>
+
+<%= form_tag "/coh/cselection", method: "patch" do %>
+  <% @selected_cakes.each do |pastry|%>
+    <%= pastry.name %>
+    </br>
+    <% if pastry.name == "Fruits" %>
+      <% @colleagues_no_option.where(pastry: "Fruits").each do |c|%>
+          <%= check_box_tag "fruits[]", c.name %>
+          <%= c.name %>
+          </br>
+      <% end %>
+      <%elsif pastry.name == "Cookies" %>
+    <% @colleagues_no_option.where(pastry: "Cookies").each do |c|%>
+        <%= radio_button_tag pastry.name, c.name %>
+        <%= c.name %>
+        </br>
+
+        <% end %>
+        Pépites chocolat</br>
+        <%= radio_button_tag "pepites", "blanc" %>
+  Chocolat blanc
+  <%= radio_button_tag "pepites", "noir" %>
+  Chocolat noir
+  </br>
+  </br>
+    <% else %>
+        <% @colleagues_no_option.where(pastry: pastry.name).each do |c|%>
+          <%= radio_button_tag pastry.name, c.name %>
+          <%= c.name %>
+          </br>
+        <% end %>
+        </br>
+      <% end %>
+    <%end%>
+    </br>
+  <input type="submit" value="Sauvegarde battle" />
+<% end %>
+
+
+
+
+<p><a href="/">Retourner à l’accueil</a></p> </br>
+<p><a href="/linguini">Retourner à la décision Linguini</a></p>

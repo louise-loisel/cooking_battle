@@ -51,6 +51,8 @@ class ColleaguesController < ApplicationController
     end
   end
 
+
+
   # DELETE /colleagues/1
   # DELETE /colleagues/1.json
   def destroy
@@ -71,4 +73,5 @@ class ColleaguesController < ApplicationController
     def colleague_params
       params.require(:colleague).permit(:name, :pastry, :selectioned)
     end
+
 end
