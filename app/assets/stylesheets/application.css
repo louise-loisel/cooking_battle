@@ -16,10 +16,15 @@
  body {
    background-color: #fff;
    color: #333;
-   margin: 33px;
+   margin: 100px;
    font-family: verdana, arial, helvetica, sans-serif;
    font-size: 13px;
    line-height: 18px;
+   /*background-image: url(../images/logo.png);*/
+ }
+
+ h1{
+   color: #FF8875;
  }
 
  p, ol, ul, td {
@@ -42,7 +47,7 @@
    }
 
    &:hover {
-     color: #fff;
+     color: #FF8875;
      background-color: #000;
    }
  }
